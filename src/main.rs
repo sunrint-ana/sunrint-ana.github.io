@@ -75,7 +75,7 @@ fn Member(cx: Scope<MemberProps>) -> Element {
             }
             div {
                 h1 { "cx.props.name" }
-                h2 { "cx.props.stack" }
+                h2 { "cx.props.stack"  }
             }
         }
     }))
