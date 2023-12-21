@@ -27,7 +27,6 @@
             openssl
             pkg-config
             dioxus-cli
-            rust-analyzer
           ];
         };
       });
