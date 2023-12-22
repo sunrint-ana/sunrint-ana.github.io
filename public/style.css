@@ -1,0 +1,144 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard";
+    font-size: 16px;
+    color: #111
+}
+
+:root {
+    --gray: #999;
+    --blue-gray: #EFF1F5;
+    --orange: #FAB387;
+
+    --guide: 20%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 70px;
+    background-color: #2D2E39;
+    padding: 0 var(--guide);
+
+    > img {
+        width: 50px;
+    }
+    > nav {
+        display: flex;
+        > a {
+            color: #fff;
+            text-decoration: none;
+            &:hover{
+                color: #ddd;
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    > img {
+        width: 100vw;
+    }
+    > article{
+        height: calc(100vh - 70px);
+        max-height: 800px;
+        &#introduce{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: calc(var(--guide)/2) var(--guide);
+
+            & h1 {
+                font-size: 50px
+            }
+            & h2 {
+                font-size: 25px;
+                color: var(--gray)
+            }
+            & svg {
+                align-self: self-end;
+                width: 180px;
+                cursor: pointer;
+                --bg: var(--orange);
+                &:hover{
+                    --bg: #efab80;
+                }
+                > path:first-child {
+                    fill: var(--bg);
+                }
+            }
+        }
+
+        &#awards {
+            padding: 200px var(--guide);
+            background-color: var(--orange);
+            > section{
+                display: flex;
+                flex-direction: column;
+
+                &:first-child{
+                    gap: 20px;
+                    float: left;
+                }
+                
+                &:last-child{
+                    float: right;
+                    text-align: end;
+
+                    > h1 {
+                        color: #fff;
+                        font-size: 40px
+                    }
+                    
+                    > h2 {
+                        color: #FBE3D7;
+                        font-size: 30px
+                    }
+                }
+            }
+        }
+    }
+}
+
+.award{
+    display: flex;
+    height: 65px;
+    > img:last-child{
+        height: 100%;
+        transform: scaleY(-1) scaleX(-1);
+    }
+    > div{
+        background-color: #fff;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding: 10px 25px;
+        font-size: 25px;
+        > b {
+            font-size: 25px;
+        }
+        > div{
+            width: 3px;
+            height: 50%;
+            border-radius: 100px;
+            background-color: var(--blue-gray);
+        }
+    }
+}
+
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
