@@ -10,14 +10,22 @@ pub struct MemberProps{
 pub fn Member(cx: Scope<MemberProps>) -> Element {
     cx.render(rsx!(p {
         div {
-            div {
-                img {
-                    src: "{cx.props.profile}"
-                }
+            class: "member",
+            img {
+                src: "slide/award.svg"
             }
             div {
-                h1 { "cx.props.name" }
-                h2 { "cx.props.stack"  }
+                img {
+                    id: "img",
+                    src: "member/{cx.props.profile}.png"
+                }
+                section {
+                    b { "{cx.props.name}" }
+                    "{cx.props.stack}"
+                }
+            }
+            img {
+                src: "slide/award.svg"
             }
         }
     }))

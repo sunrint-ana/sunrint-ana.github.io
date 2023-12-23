@@ -1,7 +1,7 @@
 use dioxus_router::prelude::*;
 use dioxus::{prelude::*, html::section};
 
-use crate::component::{Header, Award};
+use crate::component::{Header, Award, Member};
 mod component;
 
 fn main() {
@@ -11,11 +11,13 @@ fn main() {
 #[derive(Routable, PartialEq, Debug, Clone)]
 enum Route {
     #[route("/")]
-    Index {},
-    #[route("")]
-    NotFound {},
+    IndexPage {},
     #[route("/member")]
-    Member {},
+    MemberPage {},
+    // #[route("/:..route")]
+    // NotFound {
+    //     route: Vec<String>,
+    // },
 }
 
 
@@ -32,7 +34,7 @@ fn app(cx: Scope) -> Element {
 
 
 
-fn Index(cx: Scope) -> Element {
+fn IndexPage(cx: Scope) -> Element {
     cx.render(rsx! { 
         main {
             article {
@@ -68,10 +70,10 @@ fn Index(cx: Scope) -> Element {
             article {
                 id: "awards",
                 section {
-                    Award {
-                        t: "대상".to_string(),
-                        d: "suspiciously 대회".to_string()
-                    }
+                    // Award {
+                    //     t: "대상".to_string(),
+                    //     d: "suspiciously 대회".to_string()
+                    // }
                     
                     Award {
                         t: "대상".to_string(),
@@ -99,7 +101,7 @@ fn Index(cx: Scope) -> Element {
 
 
 
-fn Member(cx: Scope) -> Element {
+fn MemberPage(cx: Scope) -> Element {
     cx.render(rsx! { 
         main {
             article {
@@ -117,41 +119,35 @@ fn Member(cx: Scope) -> Element {
                 src: "slide/light-orange.svg"
             }
             article {
-                id: "members",
-                section {
-                    Award {
-                        t: "대상".to_string(),
-                        d: "suspiciously 대회".to_string()
-                    }
-                    
-                    Award {
-                        t: "대상".to_string(),
-                        d: "suspiciously 대회".to_string()
-                    }
-                    
-                    Award {
-                        t: "대상".to_string(),
-                        d: "suspiciously 대회".to_string()
-                    }
-                }
-                section{
-                    h1 {
-                        "총 120개의 대회에서 수상"
-                    }
-                    h2 {
-                        "2023년에 7개수상 "
-                    }
-                }
+                class: "members",
+                Member {
+                    profile: "5-23".to_string(),
+                    name: "5-23".to_string(),
+                    stack: "fulltack / design".to_string()
+                },
+                Member {
+                    profile: "5-23".to_string(),
+                    name: "5-23".to_string(),
+                    stack: "fulltack / design".to_string()
+                },
+                Member {
+                    profile: "5-23".to_string(),
+                    name: "5-23".to_string(),
+                    stack: "fulltack / design".to_string()
+                },
             }
         }
     })
 }
 
 
-fn NotFound(cx: Scope) -> Element {
-    cx.render(rsx! { 
-        div {
-            "404 Not Found"
+fn NotFound(cx: Scope, route: Vec<String>) -> Element {
+    render! {
+        h1 { "Page not found" }
+        p { "We are terribly sorry, but the page you requested doesn't exist." }
+        pre {
+            color: "red",
+            "log:\nattemped to navigate to: {route:?}"
         }
-    })
+    }
 }
