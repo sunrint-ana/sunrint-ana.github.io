@@ -120,21 +120,82 @@ fn MemberPage(cx: Scope) -> Element {
             }
             article {
                 class: "members",
-                Member {
-                    profile: "5-23".to_string(),
-                    name: "5-23".to_string(),
-                    stack: "fulltack / design".to_string()
-                },
-                Member {
-                    profile: "5-23".to_string(),
-                    name: "5-23".to_string(),
-                    stack: "fulltack / design".to_string()
-                },
-                Member {
-                    profile: "5-23".to_string(),
-                    name: "5-23".to_string(),
-                    stack: "fulltack / design".to_string()
-                },
+                h1 {
+                    "special thx"
+                }
+                section {
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                }
+            }
+            
+            img {
+                class: "reverse",
+                src: "slide/dark-orange.svg",
+            }
+            article {
+                class: "members reverse",
+                h1 {
+                    "2023"
+                }
+                section {
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                }
+            }
+
+            img {
+                class: "no-reverse",
+                src: "slide/light-orange.svg",
+            }
+            article {
+                class: "members",
+                h1 {
+                    "2022"
+                }
+                section {
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                    Member {
+                        profile: "5-23".to_string(),
+                        name: "5-23".to_string(),
+                        stack: "fulltack / design".to_string()
+                    },
+                }
             }
         }
     })

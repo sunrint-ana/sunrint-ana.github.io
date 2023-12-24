@@ -13,12 +13,13 @@
     --gray: #999;
     --blue-gray: #EFF1F5;
     --orange: #FAB387;
-
+    --dark-orange: #EF9F76;
     --guide: 20%;
 }
 
 header {
     position: fixed;
+    z-index: 10000;
     top: 0;
     display: flex;
     align-items: center;
@@ -135,10 +136,19 @@ main {
         }
     }
 }
-p{
-    height: 0px;
-    background-color: red;
+
+p {
+    height: 110px;
+    width: 400px;
 }
+img.reverse {
+    background-color: var(--orange);
+    transform: scaleX(-1);
+}
+img.no-reverse {
+    background-color: var(--dark-orange);
+}
+
 .member {
     display: flex;
     height: 110px;
@@ -174,8 +184,22 @@ p{
 
 .members {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     background-color: var(--orange);
+    padding: 30px var(--guide);
+    gap: 20px;
+    &.reverse {
+        background-color: var(--dark-orange);
+    }
+    > h1 {
+        font-size: 40px;
+        color: #fff;
+    }
+    > section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }
 
 
