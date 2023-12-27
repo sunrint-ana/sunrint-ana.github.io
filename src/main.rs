@@ -69,6 +69,14 @@ fn IndexPage(cx: Scope) -> Element {
             }
             article {
                 id: "awards",
+                section{
+                    h1 {
+                        "총 120개의 대회에서 수상"
+                    }
+                    h2 {
+                        "2023년에 7개수상 "
+                    }
+                }
                 section {
                     // Award {
                     //     t: "대상".to_string(),
@@ -83,14 +91,6 @@ fn IndexPage(cx: Scope) -> Element {
                     Award {
                         t: "대상".to_string(),
                         d: "suspiciously 대회".to_string()
-                    }
-                }
-                section{
-                    h1 {
-                        "총 120개의 대회에서 수상"
-                    }
-                    h2 {
-                        "2023년에 7개수상 "
                     }
                 }
             }

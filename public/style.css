@@ -60,7 +60,7 @@ main {
             padding: calc(var(--guide)/2) var(--guide);
 
             & h1 {
-                font-size: 50px
+                font-size: 50px;
             }
             & h2 {
                 font-size: 25px;
@@ -87,12 +87,12 @@ main {
                 display: flex;
                 flex-direction: column;
 
-                &:first-child{
+                &:last-child{
                     gap: 20px;
                     float: left;
                 }
                 
-                &:last-child{
+                &:first-child{
                     float: right;
                     text-align: end;
 
@@ -194,6 +194,7 @@ img.no-reverse {
     > h1 {
         font-size: 40px;
         color: #fff;
+        text-transform: uppercase;
     }
     > section {
         display: flex;
@@ -206,4 +207,106 @@ img.no-reverse {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+
+@media (width<=1034px) {
+    :root {
+        --guide: 10%;
+    }
+
+    header {
+        height: 60px;
+        
+        > img {
+            width: 40px;
+        }
+    }
+
+    article#introduce {
+        & h1 {
+            padding-top: 50px;
+            font-size: 30px !important;
+        }
+        & h2 {
+            font-size: 16px !important;
+            color: var(--gray);
+        }
+        > svg {
+            width: 120px !important;
+        }
+    }
+    section > p{
+        height: auto;
+        width: auto;
+    }
+    article#awards {
+        padding: 100px var(--guide) !important;
+        background-color: var(--orange);
+        > section{
+            display: flex;
+            flex-direction: column;
+
+            &:last-child{
+                margin-top: 30px;
+            }
+            
+            &:first-child{
+                float: left !important;
+                text-align: start !important;
+                > h1 {
+                    font-size: 25px !important
+                }
+                > h2 {
+                    font-size: 20px !important
+                }
+            }
+        }
+    }
+
+    .award {
+        height: 50px;
+        > div{
+            gap: 10px;
+            font-size: 16px !important;
+            > b {
+                font-size: 16px !important;
+            }
+        }
+    }
+}
+
+@media (width<=1034px) {
+    .member {
+        height: 80px;
+        width: 100%;
+        > div {
+            width: 100%;
+            > img {
+                width: 50px;
+            }
+            > section {
+                font-size: 16px !important;
+                > b {
+                    font-size: 20px !important;
+                }
+            }
+        }
+    }
+
+    
+    .members {
+        padding: 50px var(--guide) !important;
+        align-items: center;
+
+        > h1 {
+            font-size: 30px !important;
+        }
+
+
+        > section {
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
