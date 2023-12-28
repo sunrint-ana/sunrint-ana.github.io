@@ -217,9 +217,6 @@ img.no-reverse {
     }
 }
 
-path {
-    fill: red
-}
 .members {
     display: flex;
     flex-direction: column;
