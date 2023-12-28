@@ -11,8 +11,9 @@ pub fn Member(cx: Scope<MemberProps>) -> Element {
     cx.render(rsx!(p {
         div {
             class: "member",
+            
             img {
-                src: "slide/award.svg"
+                src: "slide/info.svg"
             }
             div {
                 img {
@@ -25,8 +26,18 @@ pub fn Member(cx: Scope<MemberProps>) -> Element {
                 }
             }
             img {
-                src: "slide/award.svg"
+                src: "slide/info.svg"
             }
         }
     }))
 }
+// svg {
+//     width: "10",
+//     height: "72",
+//     view_box: "0 0 10 72",
+//     fill: "none",
+//     xmlns: "http://www.w3.org/2000/svg",
+//     path {
+//         d: "M10 0V72H0L10 0Z"
+//     }
+// }
