@@ -1,0 +1,25 @@
+name: deploy site
+
+on:
+  push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+	with:
+          targets: "wasm32-unknown-unknown"
+      - uses: Swatinem/rust-cache@v2
+      - name: build website
+          run: |
+            sudo apt update && sudo apt dist-upgrade -y
+            dx build --release
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        with:
+          branch: gh-pages
+          folder: dist
