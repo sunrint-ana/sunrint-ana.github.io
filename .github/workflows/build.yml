@@ -12,8 +12,10 @@ jobs:
         with:
           targets: "wasm32-unknown-unknown"
       - uses: Swatinem/rust-cache@v2
+      - uses: cargo-bins/cargo-binstall@v1.4.9
       - name: build website
         run: |
+          cargo binstall dioxus-cli
           dx build --release
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.5.0
