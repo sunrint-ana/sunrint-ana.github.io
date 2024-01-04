@@ -4,7 +4,7 @@ pub fn Header(cx: Scope) -> Element {
     cx.render(rsx! { 
         header {
             img {
-                src: "logo.svg"
+                src: "favicon.svg"
             }
             nav {
                 a {

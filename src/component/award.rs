@@ -6,8 +6,6 @@ pub struct AwardProps{
     d: String
 }
 
-
-
 pub fn Award(cx: Scope<AwardProps>) -> Element {
     cx.render(rsx!(p {
         div {

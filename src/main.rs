@@ -1,5 +1,5 @@
 use dioxus_router::prelude::*;
-use dioxus::{prelude::*, html::section};
+use dioxus::prelude::*;
 
 use crate::component::{Header, Award, Member};
 mod component;
@@ -23,13 +23,18 @@ enum Route {
 
 // create a component that renders a div with the text "Hello, world!"
 fn app(cx: Scope) -> Element {
-    render!{
-        link{
+    render! {
+        link {
             rel: "stylesheet",
             href: "style.css"
         }
+        link {
+            rel: "icon",
+            href: "favicon.svg"
+        }
         Header{}
-        Router::<Route> { }}
+        Router::<Route> { }
+    }
 }
 
 
@@ -199,16 +204,4 @@ fn MemberPage(cx: Scope) -> Element {
             }
         }
     })
-}
-
-
-fn NotFound(cx: Scope, route: Vec<String>) -> Element {
-    render! {
-        h1 { "Page not found" }
-        p { "We are terribly sorry, but the page you requested doesn't exist." }
-        pre {
-            color: "red",
-            "log:\nattemped to navigate to: {route:?}"
-        }
-    }
 }

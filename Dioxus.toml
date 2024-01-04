@@ -1,11 +1,11 @@
 [application]
-name = "my_project"
+name = "AnA"
 default_platform = "web"
 out_dir = "dist"
 asset_dir = "public"
 
 [web.app]
-title = "project_name"
+title = "AnA"
 
 [web.watcher]
 reload_html = true
