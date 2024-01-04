@@ -1,7 +1,5 @@
 name: deploy site
-
-on:
-  push
+on: push
 
 jobs:
   deploy:
@@ -11,13 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-	with:
+        with:
           targets: "wasm32-unknown-unknown"
       - uses: Swatinem/rust-cache@v2
       - name: build website
-          run: |
-            sudo apt update && sudo apt dist-upgrade -y
-            dx build --release
+        run: |
+          sudo apt update && sudo apt dist-upgrade -y
+          dx build --release
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
