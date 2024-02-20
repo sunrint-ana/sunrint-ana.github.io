@@ -18,7 +18,7 @@ jobs:
           tool: dioxus-cli
       - name: build website
         run: |
-          dx build --release
+          dx serve
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
